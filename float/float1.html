@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.float{
+				float:left;
+			}
+			.block{
+				width: 100px;
+				height: 100px;
+			}
+			.c1 {
+				background: red;
+			}
+			.c2 {
+				background: green;
+			}
+			.c3 {
+				background: purple;
+			}
+			.cp {
+				background: #aaa;
+			}
+		</style>
+	</head>
+	<body>
+		<h4>
+			float可能会覆盖除了img标签外具有width属性的块，被挤掉的元素里面的内容则会溢出(chrome)
+		</h4>
+		<div class="cp">
+			<div class="c1 block">div1</div>
+			<div class="c2 float block">div2(float)</div>
+			<div class="c3 block">div3</div>
+		</div>
+		<br />
+		
+		<p class="cp">
+			<p class="block c1">p1</p>
+			<p class="block c2 float">p2</p>
+			<p class="block c3">px3</p>
+		</p>
+		<br />
+		<div class="cp">
+			<p class="c1 block">div1</p>
+			<div class="c2 float block">div2(float)</div>
+			<p class="c3" style="width: 100px;">div3</p>
+		</div>
+	</body>
+</html>
